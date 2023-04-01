@@ -36,6 +36,8 @@ async function run() {
 
   for (const config of configs) {
     for (const exercise of config.exercises.concept) {
+      if (exercise.status == "deprecated") continue
+      
       if (!map[exercise.slug]) {
         map[exercise.slug] = {
           concepts: new Set(),
